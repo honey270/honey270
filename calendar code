@@ -1,0 +1,26 @@
+import calendar
+import tkinter as tk
+from tkinter import ttk
+
+def show_calendar(year, month):
+    # Create a window
+    root = tk.Tk()
+    root.title("Calendar")
+
+    # Create a TextCalendar instance
+    cal = calendar.TextCalendar(calendar.SUNDAY)
+    
+    # Generate the month's calendar as a multi-line string
+    month_calendar = cal.formatmonth(year, month)
+    
+    # Create a label to display the calendar
+    label = ttk.Label(root, text=month_calendar, font=("Courier", 14))
+    label.pack(padx=10, pady=10)
+    
+    # Run the application
+    root.mainloop()
+
+# Example usage
+year = 2025
+month = 3
+show_calendar(year, month)
